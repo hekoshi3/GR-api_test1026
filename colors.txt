@@ -1,0 +1,9 @@
+chat list 17181c
+chat bg 141414
+chat header 17181c
+side header 17181c
+borders 252629
+accent 007AFF
+search 2c2d30
+mymessage grad 6168e1 864bb6
+message grad 333541 3a3d5a
