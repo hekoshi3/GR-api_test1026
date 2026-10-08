@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --chat-list-bg: #17181c;
+  --chat-list-select-bg: #32343D;
   --search-bg: #2c2d30;
   --chat-bg: #141414;
   --border: #252629;
@@ -13,6 +14,7 @@
 @theme inline {
   --color-chat-list-bg: var(--chat-list-bg);
   --color-chat-bg: var(--chat-bg);
+  --color-chat-list-select-bg: var(--chat-list-select-bg);
   --color-search-bg: var(--search-bg);
   --color-border: var(--border);
   --color-accent: var(--accent);
