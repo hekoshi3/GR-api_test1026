@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "@/src/_app/css/globals.css";
 
 export const metadata: Metadata = {

@@ -1,7 +1,1 @@
-import "@/src/_app/css/globals.css";
-
-export default function MainLayout({ children }: LayoutProps<"/">) {
-  return (
-    children
-  );
-}
+export { MainLayout as default } from "@/src/_app/layouts/MainLayout";

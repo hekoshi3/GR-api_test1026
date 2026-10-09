@@ -1,6 +1,1 @@
-export default function Auth() {
-  return (
-    <div>
-    </div>
-  );
-}
+export { AuthPage as default } from "@/src/_pages/auth" 

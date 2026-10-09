@@ -17,12 +17,3 @@ export const Calls_btn = () => {
         </button>
     );
 }
-
-export const Settings_btn = () => {
-    return (
-        <button className="cursor-pointer h-16 w-16 flex flex-col justify-center items-center">
-            <Image src={"/icons/settings_icon_inactive.png"} width={24} height={24} alt="settings"></Image>
-            <span className="text-xs h-4 w-16 text-white/50">Settings</span>
-        </button>
-    );
-}

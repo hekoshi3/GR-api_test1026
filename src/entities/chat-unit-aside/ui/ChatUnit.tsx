@@ -1,9 +1,10 @@
 import { IconStatus_delivered, IconStatus_read } from "@/src/shared/ui/icons";
 import Image from "next/image";
+import Link from "next/link";
 
-export function ChatUnit({ chat }: { chat: ChatUnitType }) {
+export function ChatUnit({ chat, active }: { chat: ChatUnitType; active: boolean }) {
     return (
-        <button className="cursor-pointer w-full grid grid-cols-5 px-4 items-center hover:bg-chat-list-select-bg/60 py-2 text-left">
+        <Link className={`cursor-pointer w-full h-20 grid grid-cols-5 px-4 items-center  text-left ${active ? "bg-chat-list-select-bg" : ""} hover:bg-chat-list-select-bg/60`} href={`/${chat.chatId}`}>
             <div className="h-16 w-16 row-span-2 col-end-1 p-1 mr-4">
                 {chat.avatar ?
                     <Image
@@ -18,8 +19,9 @@ export function ChatUnit({ chat }: { chat: ChatUnitType }) {
                             justify-center
                             items-center
                             bg-accent
-                            rounded-4xl`}>
-                        <span className="text-2xl mb-1">
+                            rounded-4xl
+                            h-full`}>
+                        <span className="text-2xl mb-1 select-none">
                             {chat.name[0]}
                         </span>
                     </div>
@@ -37,7 +39,6 @@ export function ChatUnit({ chat }: { chat: ChatUnitType }) {
                     <span className="">{chat.unreadCount}</span>
                 </div>
             }
-
-        </button>
+        </Link>
     );
 }

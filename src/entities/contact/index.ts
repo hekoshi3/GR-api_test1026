@@ -1,0 +1,1 @@
+export { type ContactInfoType } from "./model/contact"

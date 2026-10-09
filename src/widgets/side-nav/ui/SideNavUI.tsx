@@ -1,5 +1,6 @@
 import { AllChats_btn, UnreadChats_btn, ChannelsChats_btn } from "./buttons/chats/chats_buttons";
-import { Contacts_btn, Calls_btn, Settings_btn } from "./buttons/buttons";
+import { Contacts_btn, Calls_btn } from "./buttons/buttons";
+import { SignOutBtn } from "./buttons/sign_out";
 
 export function SideNav() {
     return (
@@ -18,7 +19,7 @@ export function SideNav() {
                     </ul>
                 </div>
                 <div className="flex pb-3.5 justify-center items-center">
-                    <Settings_btn />
+                    <SignOutBtn />
                 </div>
             </div>
 
