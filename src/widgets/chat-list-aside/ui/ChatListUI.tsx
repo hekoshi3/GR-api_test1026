@@ -9,13 +9,13 @@ export function ChatList() {
     const chats: ChatUnitType[] = []
     return (
         <aside className="max-w-99 border-r border-l border-border min-h-screen bg-chat-list-bg">
-            <div className="flex flex-row justify-between pt-4 pb-4 px-4.5">
+            <div className="flex flex-row  pt-4 pb-4 px-4.5">
                 <span className="text-2xl font-bold">Chats</span>
             </div>
-            <div className="flex flex-col justify-center items-center">
+            <div className="max-w-60 lg:max-w-90">
                 <Search />
-                <div className="min-w-50 pt-2">
-                    <div className="p-5 text-white/60">The chat list is currently unavailable. Please use the phone number search located above.</div>
+                <div className="pt-2">
+                    <div className="p-4 text-white/60 wrap-break-word text-xs">The chat list is currently unavailable. Please use the phone number search located above.</div>
                     {chats.length > 0 ? chats.map((chat) => (
                         <ChatUnit key={chat.chatId} chat={chat} active={"/" + chat.chatId === pathname} />
                     )) : <></>}

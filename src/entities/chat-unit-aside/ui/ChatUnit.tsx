@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function ChatUnit({ chat, active }: { chat: ChatUnitType; active: boolean }) {
     return (
-        <Link className={`cursor-pointer w-full h-20 grid grid-cols-5 px-4 items-center  text-left ${active ? "bg-chat-list-select-bg" : ""} hover:bg-chat-list-select-bg/60`} href={`/${chat.chatId}`}>
+        <Link className={`cursor-pointer w-full h-20 grid grid-cols-5 px-4 items-center text-left ${active ? "bg-chat-list-select-bg" : ""} hover:bg-chat-list-select-bg/60`} href={`/${chat.chatId}`}>
             <div className="h-16 w-16 row-span-2 col-end-1 p-1 mr-4">
                 {chat.avatar ?
                     <Image
