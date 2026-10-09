@@ -1,4 +1,4 @@
-from node:24-alpine as deps
+from public.ecr.aws/docker/library/node:24-alpine AS deps
 run apk add --no-cache libc6-compat
 workdir /app
 env CI=true
@@ -6,7 +6,7 @@ run corepack enable && corepack prepare pnpm@latest --activate
 copy package.json pnpm-lock.yaml* pnpm-workspace.yaml* ./
 run pnpm i --frozen-lockfile
 
-from node:24-alpine as builder
+from public.ecr.aws/docker/library/node:24-alpine as builder
 workdir /app
 env CI=true
 run corepack enable && corepack prepare pnpm@latest --activate
@@ -15,7 +15,7 @@ copy . .
 env NEXT_TELEMETRY_DISABLED=1
 run pnpm run build
 
-from node:24-alpine as runner
+from public.ecr.aws/docker/library/node:24-alpine as runner
 workdir /app
 env NODE_ENV=production
 env PORT=3000
