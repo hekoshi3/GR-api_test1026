@@ -15,6 +15,7 @@ export function ChatList() {
             <div className="flex flex-col justify-center items-center">
                 <Search />
                 <div className="min-w-50 pt-2">
+                    <div className="p-5 text-white/60">The chat list is currently unavailable. Please use the phone number search located above.</div>
                     {chats.length > 0 ? chats.map((chat) => (
                         <ChatUnit key={chat.chatId} chat={chat} active={"/" + chat.chatId === pathname} />
                     )) : <></>}
