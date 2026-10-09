@@ -66,7 +66,6 @@ export function ChatPage() {
                 const body: ChatMessageProps[] = await res.json()
                 setChatHistory(body.reverse())
             } catch (e) {
-                console.error(e)
                 if ((e as Error).name !== 'AbortError') {
                     console.error(e)
                 }
@@ -80,7 +79,7 @@ export function ChatPage() {
         };
     }, [chatId])
 
-    useEffect(() => {
+    /*useEffect(() => {
         const interval = setInterval(async () => {
             try {
                 const res = await NotificationHandling()
@@ -137,25 +136,26 @@ export function ChatPage() {
         }, 5000)
 
         return () => clearTimeout(interval)
-    }, [chatId])
+    }, [chatId])*/
 
     const handleSent = (msg: ChatMessageProps) => {
         setChatHistory(prev => [...prev, msg])
     };
 
     return (
-        <div className="flex flex-col overflow-hidden items-center h-screen">
-            <ChatHeader avatar={contactInfo?.avatar ?? null} chatName={contactInfo?.contactName ?? chatId} />
-            <div className="flex flex-col w-1/2 flex-1 min-h-0 mt-2 ">
-                <div className="flex-1 min-h-0 overflow-y-scroll mb-5 flex flex-col scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                    <div className="mt-auto">
+        <div className="flex flex-col overflow-hidden min-w-0 w-full h-screen">
+            <ChatHeader
+                avatar={contactInfo?.avatar ?? null}
+                chatName={contactInfo?.contactName ?? chatId} />
+            <div className="flex flex-col min-w-0 max-w-3xl w-full mx-auto flex-1 min-h-0 mt-2 px-2">
+                <div className="flex-1 min-h-0 min-w-0 overflow-y-auto mb-5 flex flex-col scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                    <div className="mt-auto min-w-0 ">
                         <Chat chatHistory={chatHistory} />
                     </div>
                 </div>
-                <div className="srink-0 pb-5">
+                <div className="shrink-0 pb-5 min-w-0 ">
                     <ChatInput chatId={chatId} onSent={handleSent} />
                 </div>
-
             </div>
         </div>
     );

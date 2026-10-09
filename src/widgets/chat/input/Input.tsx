@@ -1,4 +1,4 @@
-import { Icon_Attachment } from "@/src/shared/ui/icons";
+import { Icon_Attachment, Icon_Send } from "@/src/shared/ui/icons";
 import { SubmitMessage } from "../model/submit-message";
 import { ChatMessageProps } from "@/src/entities/chat-message/model/message";
 
@@ -6,6 +6,7 @@ export function ChatInput({ chatId, onSent }: { chatId: string; onSent: (msg: Ch
 
     const handleFormAction = async (formData: FormData) => {
         const textMessage = formData.get("textMessage") as string;
+        if (textMessage === '' || textMessage === null || textMessage === undefined) return
         const optimisticMessage: ChatMessageProps = {
             type: "outgoing",
             idMessage: Date.now().toString(),
@@ -41,10 +42,12 @@ export function ChatInput({ chatId, onSent }: { chatId: string; onSent: (msg: Ch
 
     };
     return (
-        <form action={handleFormAction} className="bg-chat-list-bg shadow-xl flex px-4 py-2 rounded-xl justify-center items-center">
+        <form action={handleFormAction} className="bg-chat-list-bg shadow-xl flex px-4 py-2 rounded-xl justify-center items-center min-w-0 w-full">
             <button type="button" className="text-white/50 hover:bg-black/20 cursor-pointer rounded-3xl w-8 "><Icon_Attachment className="p-1" /></button>
-            <input type="text" id="textMessage" name="textMessage" placeholder="Message" className="w-full px-2 focus:outline-0" />
-            <button type="submit" className=""></button>
+            <input type="text" id="textMessage" name="textMessage" placeholder="Message" className="flex-1 px-2 focus:outline-0" />
+            <button type="submit" className="cursor-pointer bg-accent w-7 h-7 flex items-center justify-center rounded-2xl shrink-0">
+                <Icon_Send className="p-1" />
+            </button>
         </form>
     )
 }

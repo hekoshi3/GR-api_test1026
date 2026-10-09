@@ -14,7 +14,7 @@ export function ChatList() {
             </div>
             <div className="flex flex-col justify-center items-center">
                 <Search />
-                <div className="w-99 pt-2">
+                <div className="min-w-50 pt-2">
                     {chats.length > 0 ? chats.map((chat) => (
                         <ChatUnit key={chat.chatId} chat={chat} active={"/" + chat.chatId === pathname} />
                     )) : <></>}

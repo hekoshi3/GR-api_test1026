@@ -13,8 +13,8 @@ export function Chat({ chatHistory }: { chatHistory: ChatMessageProps[] }) {
     return (
         <>
             {chatHistory ? (chatHistory.map((message) => (
-                <div key={message.idMessage} className={`flex ${message.type === "outgoing" ? "justify-end" : ""} `}>
-                    <div className="flex max-w-3/4 text-left">
+                <div key={message.idMessage} className={`flex ${message.type === "outgoing" ? "justify-end" : ""} w-full`}>
+                    <div className="max-w-3/4 min-w-0">
                         {(message.typeMessage === "textMessage" || message.typeMessage === "extendedTextMessage")
                             ? <Message textMessage={message.textMessage} isSender={message.type === "outgoing"} /> :
                             <Message textMessage={"<<Image input>>"} isSender={message.type === "outgoing"} />}

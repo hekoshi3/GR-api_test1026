@@ -7,7 +7,7 @@ export function MainLayout({ children }: LayoutProps<"/">) {
         <div className="flex flex-row overflow-clip">
             <SideNav />
             <ChatList />
-            <main className="grow">
+            <main className="min-w-0 grow">
                 {children}
             </main>
         </div>

@@ -20,11 +20,11 @@ export function Search() {
 
     };
     return (
-        <div className="w-full">
+        <div className="w-full min-w-30 shrink-0">
             <form action={handleFormAction} className="bg-search-bg rounded-xl grid grid-cols-4 mx-4 py-1">
                 <input inputMode="numeric" type="tel" id="phoneNumber" name="phoneNumber" placeholder="Input number" className="focus:outline-0 col-start-1 col-end-4 px-2" />
                 <div className="flex justify-end px-2">
-                    <button type="submit" className="cursor-pointer bg-accent w-7 h-7 flex items-center justify-center rounded-2xl">
+                    <button type="submit" className="cursor-pointer bg-accent w-7 h-7 flex items-center justify-center rounded-2xl shrink-0">
                         <Icon_Search className="p-1" />
                     </button>
                 </div>

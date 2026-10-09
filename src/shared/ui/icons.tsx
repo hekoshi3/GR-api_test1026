@@ -71,3 +71,18 @@ export const Icon_Search = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElem
         />
     </svg>
 )
+export const Icon_Send = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M5.29 11.705a1 1 0 0 1 .005-1.415l6.015-5.97a1 1 0 0 1 1.41.001l5.987 5.972a1 1 0 0 1-1.412 1.416l-4.28-4.27v11.533a1 1 0 1 1-2 0V7.43l-4.31 4.279a1 1 0 0 1-1.414-.005"
+            clipRule="evenodd"
+        />
+    </svg>
+)

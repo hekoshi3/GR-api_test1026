@@ -6,6 +6,12 @@ export function Message({ textMessage, isSender }: { textMessage: string; isSend
         :
         "bg-linear-to-r from-neutral-800 to-neutral-700";
     return (
-        <span className={`rounded-2xl my-px py-2 pr-5 pl-2 wrap-break-word w-full ${style} w-1/2`}>{textMessage}</span>
+        <span
+            className={`inline-block rounded-2xl my-px py-2 pr-5 pl-2
+                max-w-full wrap-break-word whitespace-pre-wrap
+                ${style}`}
+        >
+            {textMessage}
+        </span>
     );
 }
