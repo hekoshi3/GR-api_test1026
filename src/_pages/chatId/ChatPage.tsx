@@ -79,7 +79,7 @@ export function ChatPage() {
         };
     }, [chatId])
 
-    /*useEffect(() => {
+    useEffect(() => {
         const interval = setInterval(async () => {
             try {
                 const res = await NotificationHandling()
@@ -136,7 +136,7 @@ export function ChatPage() {
         }, 5000)
 
         return () => clearTimeout(interval)
-    }, [chatId])*/
+    }, [chatId])
 
     const handleSent = (msg: ChatMessageProps) => {
         setChatHistory(prev => [...prev, msg])
