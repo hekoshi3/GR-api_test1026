@@ -1,4 +1,6 @@
 # Веб-клиент для работы с сообщениями в мессенджере с использованием GREEN-API
+Демо: https://grapitest.spoons.su/
+
 ## Реализовано:
 - Вход через idInstance и apiTokenInstance с сохранением в httpOnly Cookie;
 - Открытие чата по номеру телефона;
