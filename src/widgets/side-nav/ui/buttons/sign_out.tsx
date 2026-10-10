@@ -17,7 +17,7 @@ export const SignOutBtn = () => {
     }
     return (
         <button className="cursor-pointer h-16 w-16 flex flex-col justify-center items-center" onClick={handleSignOut}>
-            <Image src={"/icons/settings_icon_inactive.png"} width={24} height={24} alt="settings"></Image>
+            <img src={"/icons/settings_icon_inactive.png"} width={24} height={24} alt="settings"></img>
             <span className="text-xs h-4 w-16 text-white/50">Sign out</span>
         </button>
     );

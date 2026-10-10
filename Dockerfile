@@ -23,7 +23,7 @@ env HOSTNAME="0.0.0.0"
 env NEXT_TELEMETRY_DISABLED=1
 run addgroup --system --gid 1001 nodejs
 run adduser --system --uid 1001 nextjs
-copy --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 copy --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 copy --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 user nextjs
